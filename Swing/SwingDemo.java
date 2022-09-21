@@ -17,7 +17,7 @@ public class SwingDemo {
         JFrame jFrame = new JFrame("First Swing Application");
 
         // Give it a size
-        jFrame.setSize(300, 300);
+        jFrame.setSize(400, 400);
 
         // Terminate the program when the user closes the application
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,7 +33,7 @@ public class SwingDemo {
         jFrame.add(jButtonTest);
 
         // Create a jlabel
-        jLabel = new JLabel("Whow this is amazing!");
+        jLabel = new JLabel("Wow this is amazing!");
 
         // Add to the frame
         jFrame.add(jLabel);
