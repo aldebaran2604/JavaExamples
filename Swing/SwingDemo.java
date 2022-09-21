@@ -3,6 +3,8 @@ package Swing;
 import javax.swing.*;
 import javax.swing.SwingUtilities;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * SwingDemo
@@ -27,6 +29,29 @@ public class SwingDemo {
         JButton jButtonDown = new JButton("Down");
         JButton jButtonTest = new JButton("Test");
 
+        // Add EventListeners
+        jButtonUp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jLabel.setText("Hello Up Clicked");
+
+            }
+        });
+
+        jButtonDown.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jLabel.setText("Hello Down Clicked");
+            }
+        });
+
+        jButtonTest.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jLabel.setText("Hello Test Clicked");
+            }
+        });
+
         // Add to the frame
         jFrame.add(jButtonUp);
         jFrame.add(jButtonDown);
@@ -47,14 +72,7 @@ public class SwingDemo {
 
     public static void main(String[] args) {
         // Create de from on the event dispatching thread
-        SwingUtilities.invokeLater(new Runnable() {
-
-            @Override
-            public void run() {
-                new SwingDemo();
-            }
-
-        });
+        SwingUtilities.invokeLater(() -> new SwingDemo());
     }
 
 }
